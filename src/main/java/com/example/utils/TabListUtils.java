@@ -59,7 +59,7 @@ public class TabListUtils {
      * this one method in order to avoid more transversal of the list than is necessary, as these checks need
      * to happen somewhat frequently.
      */
-    public static void parseTabEntries() throws ParseException {
+    public static void parseTabEntries() {
         boolean exploFlag = false;
         boolean numVisitorsFlag = false;
 
@@ -77,7 +77,12 @@ public class TabListUtils {
 
             if (mithrilMatcher.find()) {
                 NumberFormat nf = NumberFormat.getInstance();
-                mithril = nf.parse(mithrilMatcher.group(1)).intValue();
+                try {
+                    mithril = nf.parse(mithrilMatcher.group(1)).intValue();
+                }catch (ParseException e){
+                    e.printStackTrace();
+                }
+
             }
 
             if (areaMatcher.find()) {
