@@ -9,8 +9,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = "mymod", useMetadata=true)
-public class mymod {
+@Mod(modid = "myspecialmod", useMetadata=true)
+public class myspecialmod {
     public Commands commands;
 
     @Mod.EventHandler
